@@ -1,0 +1,31 @@
+<h2>Student Details</h2>
+<button (click)="addStudent()">Add a New Student</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Stream</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.dob | date:'yyyy-MM-dd'}}</td>
+            <td>{{student.stream}}</td>
+            <td>{{student.year}}</td>
+            <td>
+                <button class="action-btn view-btn" [routerLink]="[student.id]">View</button>
+                <button class="action-btn edit-btn" (click)="editStudent(student.id)">Edit</button>
+                <button class="action-btn delete-btn" (click)="deleteStudent(student.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

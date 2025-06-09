@@ -1,0 +1,10 @@
+<h2>Student Details</h2>
+<div id="studentDetails" *ngIf="student">
+    <p><strong>ID:</strong> <span>{{student.id}}</span></p>
+    <p><strong>Name:</strong> <span>{{student.name}}</span></p>
+    <p><strong>Email:</strong> <span>{{student.email}}</span></p>
+    <p><strong>Date of Birth:</strong> <span>{{student.dob | date:'yyyy-MM-dd'}}</span></p>
+    <p><strong>Stream:</strong> <span>{{student.stream}}</span></p>
+    <p><strong>Year:</strong> <span>{{student.year}}</span></p>
+    <button [routerLink]="['/edit', student.id]">Edit</button>
+</div>

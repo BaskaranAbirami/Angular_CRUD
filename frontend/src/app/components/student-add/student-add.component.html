@@ -1,0 +1,29 @@
+<h2>Add Student</h2>
+<form [formGroup]="studentAddForm" (ngSubmit)="onSubmit()">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" formControlName="name" required>
+
+  <label for="email">Email Address</label>
+  <input type="email" id="email" formControlName="email" required>
+
+  <label for="dob">Date of Birth</label>
+  <input type="date" id="dob" formControlName="dob" required>
+
+  <label for="stream">Stream</label>
+  <select id="stream" formControlName="stream" required>
+    <option value="Computer Science">Computer Science</option>
+    <option value="Physics">Physics</option>
+    <option value="Chemistry">Chemistry</option>
+    <option value="Mathematics and Statistics">Mathematics and Statistics</option>
+  </select>
+
+  <label for="year">Year</label>
+  <select id="year" formControlName="year" required>
+    <option value="1">Year 1</option>
+    <option value="2">Year 2</option>
+    <option value="3">Year 3</option>
+    <option value="4">Year 4</option>
+  </select>
+
+  <button type="submit">Add Student</button>
+</form>
